@@ -3,7 +3,7 @@
 ## Descriere
 Acest repository conţine resurse utile în materie de OOP în C++, de la exerciţii la documente redactate în LaTeX. 
 
-Materialul este pregătit pentru ***tutoriatul de Programare Avansată pe Obiecte*** ținut în semestrul al II-lea, din cadrul anului academic 2020-2021.
+Materialul este pregătit pentru ***tutoriatul de Programare Orientată pe Obiecte*** ținut în semestrul al II-lea, din cadrul anului academic 2020-2021.
 
 ## Conţinut
 Cursul de POO tratează următoarele noţiuni:
