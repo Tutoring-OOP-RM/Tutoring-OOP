@@ -34,3 +34,5 @@ O resursă clasică :) este cartea:
 Puteţi găsi **proiectele** noastre de la **laboratorul de POO** pe paginile noastre de GitHub:
 - Raluca: [doodle-jump](https://github.com/ralucatudor/doodle-jump)
 - Mihai:  [QuizGame](https://github.com/PredaMihaiDragos/Facultate/tree/master/Anul%201/POO/QuizGame)
+
+Nu au memory leaks :D
