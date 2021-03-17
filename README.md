@@ -21,3 +21,16 @@ Cursul de POO tratează următoarele noţiuni:
 - Tratarea excepţiilor în C++
 
 În cadrul tutoriatului, avem în plan să tratăm şi alte noţiuni mai avansate, we'll see :)
+
+## Resurse 
+
+Dacă vreţi să fiţi siguri că sunteţi confortabili cu C++, puteţi să vă uitaţi prin acest repo:
+- [Useful C++ tutorial](https://github.com/jesyspa/linear-cpp)
+
+O resursă clasică :) este cartea:
+- Thinking in C++ - Bruce Eckel
+
+### Proiectele noastre 
+Puteţi găsi **proiectele** noastre de la **laboratorul de POO** pe paginile noastre de GitHub:
+- Raluca: [doodle-jump](https://github.com/ralucatudor/doodle-jump)
+- Mihai:  [QuizGame](https://github.com/PredaMihaiDragos/Facultate/tree/master/Anul%201/POO/QuizGame)
