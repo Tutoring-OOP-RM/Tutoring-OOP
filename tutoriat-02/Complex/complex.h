@@ -10,6 +10,11 @@ public:
     // A se observa valorile default ale parametrilor din constructor
     // => nu tipa atunci cand declar Complex c si vrea constructor fara param
     Complex(int r = 0, int i = 0): r(r), i(i) {}
+
+    // Complex(int r = 0, int i = 0) {
+    //     this->r = r;
+    //     this->i = i;
+    // }
     
     Complex(const Complex&);
 

@@ -3,20 +3,32 @@
 class String {
 private:
     char* s;
-    size_t len; //size_t tip de date pt orice dimensiune posibila
+    size_t len;     // size_t tip de date pt orice dimensiune posibila
+                    // size_t e mai special :) for (size_t i...) {}
 public:
     String(): s(new char('\0')), len(0) {}
+
     String(char* other): len(strlen(other)) {
+        // de ce nu s = other; ?   - NU!
+        //               ==> shallow copy ==> 2 pointeri care pointeaza la aceeasi adresa
+        // :D
+        
+        // Trb sa alocam memorie nouaaa!!
         s = new char[len + 1];
         strcpy(s, other);
     }
-    String(const std::string &other): len(other.size()) {
+    
+    // EXTRAA... momentan
+    String(const std::string& other): len(other.size()) {
         s = new char[len + 1];
         for (int i = 0; i < len; ++i)
             s[i] = other[i];
         s[len] = '\0';
     }
-    String(const String &other): len(other.len) { // copy constructor
+    
+    // copy constructor
+    String(const String &other): len(other.len) { // big like pt lista de initializare
+        // deep copy pt s
         s = new char[len + 1];
         /*
         for (int i = 0; i < len; i++) {
@@ -24,12 +36,15 @@ public:
         }
         s[len] = '\n';
         */
+        // mai rapid asa:
         strcpy(s, other.s);
     }
 
-    inline char* get_string() const { // getter
+    // getter
+    inline char* get_string() const {
         return s;
     }
+
     //-----------------niste settere ----------------
     inline void change_ch(unsigned index, char ch) {
         if (index >= len)
@@ -41,6 +56,7 @@ public:
             return s[0];
         return s[index];
     }
+
     //-----------------------------------------------
 /*  String operator = (const String& other) {
         len = other.len;
@@ -49,7 +65,7 @@ public:
 */
     String& operator = (const String& other) { //neaparat String& si nu String
         len = other.len;
-        if (this != &other) {
+        if (this != &other) {   
             delete[] s; // memory leak fara delete[] s;
             s = new char[len + 1];
             strcpy(s, other.s);
@@ -61,10 +77,42 @@ public:
         delete[] this -> s;
     }
 
-
+    //hopa.... extra
     String(String&& ob): len(std::exchange(ob.len, 0)), s(std::exchange(ob.s, nullptr))
     {
         std::cout << "move constructor\n";
+    }
+
+    // operatorul ==
+    inline bool operator==(const String& other) {    
+        if (len != other.len) {
+            return false;
+        }
+        for (size_t i = 0; i < len; ++i) {
+            if (s[i] != other.s[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    inline bool operator < (const String& other) {
+        if (len < other.len) {
+            return true;
+        }
+        if (len > other.len) {
+            return false;
+        }
+        
+        for (size_t i = 0; i < len; i++) {
+            if (s[i] != other.s[i]) {
+                return s[i] < other.s[i];
+            }
+        }
+
+        // Q: cum sunt s si other.s aici?
+        // A: sunt identice
+        return false;
     }
 };
 
