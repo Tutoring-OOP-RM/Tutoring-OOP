@@ -129,9 +129,9 @@ int main() {
     // operator << (cout, v) - primul parametru este fluxul
     // de aceea, nu o pot implementa ca metoda!
 
-    //operator << (cout, v) si asa functioneaza
+    // operator << (cout, v) si asa functioneaza
 
-    //v.operator << cout;
+    // v.operator << cout;
 
     Vector r;
     std::cin >> r;
